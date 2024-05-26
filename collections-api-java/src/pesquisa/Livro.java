@@ -1,5 +1,7 @@
 package pesquisa;
 
+import java.util.Comparator;
+
 public class Livro {
     private String titulo;
     private String autor;
@@ -45,5 +47,19 @@ public class Livro {
                 ", autor='" + autor + '\'' +
                 ", publicacao=" + publicacao +
                 '}';
+    }
+}
+
+class ComparatorPorAnoAutorTirulo implements Comparator<Livro> {
+
+    @Override
+    public int compare(Livro o1, Livro o2) {
+        int ano = Integer.compare(o1.getPublicacao(), o2.getPublicacao());
+        if(ano != 0)
+            return ano;
+        int autor = o1.getAutor().compareTo(o2.getAutor());
+        if(autor != 0)
+            return autor;
+        return o1.getTitulo().compareTo(o2.getTitulo());
     }
 }

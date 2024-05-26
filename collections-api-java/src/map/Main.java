@@ -9,6 +9,8 @@ public class Main {
         ag.adicionarContato(c1);
         System.out.println(ag.toString());
         System.out.println(ag.pesquisarPorNome("Veronica"));
+        ag.removerContato("Valdemir");
+        System.out.println(ag.toString());
 
 
     }

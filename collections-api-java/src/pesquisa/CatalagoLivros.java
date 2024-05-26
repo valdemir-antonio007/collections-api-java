@@ -56,4 +56,8 @@ public class CatalagoLivros {
                 "livros=" + livros +
                 '}';
     }
+
+    public ArrayList<Livro> getLivros() {
+        return livros;
+    }
 }
